@@ -1,4 +1,4 @@
-import * as React from 'React';
+import * as React from 'react';
 import { BackdropProps } from './Backdrop.type';
 import './Backdrop.css';
 

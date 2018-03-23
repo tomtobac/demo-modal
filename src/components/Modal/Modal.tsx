@@ -1,10 +1,10 @@
 import * as React from "react";
-import Backdrop from "../Backdrop";
-import Dialog from "../Dialog";
+import Backdrop from "../Backdrop/index";
+import Dialog from "../Dialog/index";
 
 import "./Modal.css";
 
-import { ModalProps, ModalState } from "./modal.type";
+import { ModalProps, ModalState } from "./Modal.type";
 
 class Modal extends React.Component<ModalProps, ModalState> {
   static defaultProps = {

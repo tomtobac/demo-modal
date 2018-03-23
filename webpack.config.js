@@ -10,7 +10,7 @@ module.exports = {
       chunkFilename: "[id].css"
     })
   ],
-  entry: ["babel-polyfill", "./src/index.tsx"],
+  entry: "./src/index.tsx",
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "index.js",
@@ -20,20 +20,22 @@ module.exports = {
     rules: [
       {
         test: /\.tsx?$/,
-        use: "ts-loader",
+        use: "awesome-typescript-loader",
         exclude: /node_modules/
       },
       {
         test: /\.css$/,
         use: ["style-loader", MiniCssExtractPlugin.loader, "css-loader"]
-      }
+      },
+      { enforce: "pre", test: /\.js$/, loader: "source-map-loader" }
     ]
   },
   devtool: "source-map",
   externals: {
-    react: "commonjs react"
+    react: "React",
+    "react-dom": "ReactDOM"
   },
   resolve: {
-    extensions: [".tsx", ".ts", ".js", ".css"]
+    extensions: [".tsx", ".ts", ".js", ".css", ".json"]
   }
 };
